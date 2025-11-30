@@ -1076,14 +1076,14 @@ const TimelineScroll = memo(() => {
                 <div
                   onClick={() => setSelectedEvent(evt)}
                   className={`group relative aspect-[16/9] md:aspect-[2/1] rounded-[1.5rem] overflow-hidden bg-[#0d0d0d] border border-white/5 transition-all duration-700 cursor-pointer ${isLeft ? 'md:ml-auto' : 'md:mr-auto'}`}
-                  style={{ willChange: 'transform' }}
+                  style={{ willChange: 'transform', contain: 'layout style paint', transform: 'translate3d(0,0,0)' }}
                 >
 
                   {/* Hover Glow */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-radial-gradient-gold pointer-events-none"></div>
 
                   {/* Image Background */}
-                  <div className="absolute inset-0 z-0">
+                  <div className="absolute inset-0 z-0" style={{ transform: 'translate3d(0,0,0)' }}>
                     <img
                       src={evt.img}
                       alt={evt.title}
@@ -1092,6 +1092,7 @@ const TimelineScroll = memo(() => {
                       decoding="async"
                       draggable="false"
                       onContextMenu={(e) => e.preventDefault()}
+                      style={{ transform: 'translate3d(0,0,0)', backfaceVisibility: 'hidden' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                   </div>
