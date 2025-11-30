@@ -34,7 +34,8 @@ const CACHE_VERSION = Date.now(); // Forces images to refresh when you reload th
 // If it starts with http, it returns it as is.
 const getImgPath = (filename: string) => {
   if (filename.startsWith('http')) return filename;
-  return `/images/${filename}?v=${CACHE_VERSION}`;
+  const base = (import.meta as any).env?.BASE_URL || '/';
+  return `${base}images/${filename}?v=${CACHE_VERSION}`;
 };
 
 // --- Static Data ---
@@ -312,11 +313,11 @@ const IntroPage = memo(({ onEnter }: { onEnter: () => void }) => {
           muted
           playsInline
           preload="metadata"
-          poster="/video-poster.png"
+          poster={`${(import.meta as any).env?.BASE_URL || '/'}video-poster.png`}
           className="w-full h-full object-cover"
           key="video-bg"
         >
-          <source src="/video.mp4" type="video/mp4" />
+          <source src={`${(import.meta as any).env?.BASE_URL || '/'}video.mp4`} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
