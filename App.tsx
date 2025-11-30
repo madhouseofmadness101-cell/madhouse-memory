@@ -65,7 +65,7 @@ const EVENTS_DATA = [
     // New Image: Lush Green Woods
     img: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=1000",
     location: "Whispering Emerald Valley",
-    story: "I will leave the city noise far behind and step into the quiet of the forest. The air will be cool and fresh. Every step on the trail will remind me why I wanted this—to see the world, to feel small in nature's vastness, and find myself in the silence."
+    story: "I will leave the city noise far behind and step into the quiet of the forest. The air will be cool and fresh. Every step on the trail will remind me why I wanted this, to see the world, to feel small in nature's vastness, and find myself in the silence."
   },
   {
     year: "2026",
@@ -83,7 +83,7 @@ const EVENTS_DATA = [
     // New Image: Road Trip/Greenery
     img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1000",
     location: "Path of Golden Horizons",
-    story: "I will take the long way—windows down, music playing, no strict plan. The road will stretch ahead with rolling hills and endless skies. I will stop whenever something catches my eye. This journey won't be about reaching a destination. It will be about being alive."
+    story: "I will take the long way windows down, music playing, no strict plan. The road will stretch ahead with rolling hills and endless skies. I will stop whenever something catches my eye. This journey won't be about reaching a destination. It will be about being alive."
   },
   {
     year: "2026",
@@ -92,7 +92,7 @@ const EVENTS_DATA = [
     // New Image: Mountain Peak/Sunset
     img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
     location: "Crown of Twilight Peaks",
-    story: "The climb will be exhausting, but when I reach the top and see the sunset paint the sky in shades of gold and purple, every step will be worth it. Up here, above the clouds, I will understand—I'm not just seeing the world. I'm becoming part of it."
+    story: "The climb will be exhausting, but when I reach the top and see the sunset paint the sky in shades of gold and purple, every step will be worth it. Up here, above the clouds, I will understand I'm not just seeing the world. I'm becoming part of it."
   },
 ];
 
@@ -1065,7 +1065,7 @@ const TimelineScroll = memo(() => {
                 initial={{ opacity: 0, scale: 0.9, y: 30 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ margin: "-100px", once: true }}
-                transition={{ duration: 0.8, type: "spring", bounce: 0.2 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 {/* Mobile Dot */}
                 <div className="absolute left-[29px] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-cinematic-gold shadow-[0_0_15px_#D4AF37] md:hidden"></div>
@@ -1080,14 +1080,14 @@ const TimelineScroll = memo(() => {
                 >
 
                   {/* Hover Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-radial-gradient-gold pointer-events-none"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-radial-gradient-gold pointer-events-none"></div>
 
                   {/* Image Background */}
                   <div className="absolute inset-0 z-0">
                     <img
                       src={evt.img}
                       alt={evt.title}
-                      className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-all duration-700 scale-105 group-hover:scale-100 grayscale group-hover:grayscale-0"
+                      className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500"
                       loading="lazy"
                       decoding="async"
                       draggable="false"
