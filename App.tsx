@@ -1047,10 +1047,7 @@ const TimelineScroll = memo(() => {
       <div className="relative max-w-6xl mx-auto px-4">
 
         {/* Pass the scroll progress to the background animation */}
-        {/* Static background - no scroll animations */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-black"></div>
-        </div>
+        <WindingPathBackground scrollProgress={smoothProgress} />
 
         {/* Central Line for Mobile */}
         <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cinematic-gold/40 to-transparent md:hidden"></div>
@@ -1068,12 +1065,12 @@ const TimelineScroll = memo(() => {
                 initial={{ opacity: 0, scale: 0.9, y: 30 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ margin: "-100px", once: true }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 {/* Mobile Dot */}
                 <div className="absolute left-[29px] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-cinematic-gold shadow-[0_0_15px_#D4AF37] md:hidden"></div>
 
-                {/* Removed StardustTrail for performance */}
+                <StardustTrail />
 
                 {/* Clickable Card - REMOVED BACKDROP BLUR for performance, used high opacity solid bg instead */}
                 <div
@@ -1082,7 +1079,8 @@ const TimelineScroll = memo(() => {
                   style={{ willChange: 'transform', contain: 'layout style paint', transform: 'translate3d(0,0,0)' }}
                 >
 
-                  {/* Removed hover glow for performance */}
+                  {/* Hover Glow */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-radial-gradient-gold pointer-events-none"></div>
 
                   {/* Image Background */}
                   <div className="absolute inset-0 z-0" style={{ transform: 'translate3d(0,0,0)' }}>
