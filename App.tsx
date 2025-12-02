@@ -105,6 +105,9 @@ const MEMBERS_DATA = [
   { name: "Priya Patel", role: "The Navigator", img: getImgPath("img-06-travel.jpg"), quote: "The best journeys have a friend who knows the way." },
   { name: "Shivangi", role: "The Muse", img: getImgPath("img-07-travel.jpeg"), quote: "You make people to see beauty in everything." },
   { name: "Archana", role: "The Explorer", img: getImgPath("img-08-travel.jpg"), quote: "Curiosity turns ordinary days into adventures." },
+  { name: "Shekhar", role: "The Rediscovered", img: getImgPath("img-09-travel.jpg"), quote: "Some journeys take you away so you can appreciate coming home." },
+  { name: "Aman", role: "The Wanderer", img: getImgPath("img-10-travel.jpg"), quote: "Lost for a while, but never truly gone from the story" },
+
 ];
 
 const PHOTOS_DATA = [
