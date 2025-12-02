@@ -1332,7 +1332,7 @@ const AboutPage = memo(() => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative h-[400px] md:h-[450px] overflow-hidden rounded-[2rem] border border-white/5 bg-black/20 hover:border-cinematic-gold/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+              className={`group relative h-[400px] md:h-[450px] overflow-hidden rounded-[2rem] border border-white/5 bg-black/20 hover:border-cinematic-gold/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)] ${index === 8 ? 'lg:col-start-2' : ''}`}
             >
               {/* Image Background */}
               <div className="absolute inset-0">
