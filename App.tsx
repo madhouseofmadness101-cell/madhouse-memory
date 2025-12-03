@@ -14,7 +14,7 @@ type ViewState = 'intro' | 'gallery' | 'timeline' | 'about';
 type GalleryLayout = 'bento' | 'uniform';
 
 // --- CONFIG ---
-const PASSCODE = "journey"; // <--- CHANGE THIS TO YOUR SECRET PASSWORD
+const PASSCODE = import.meta.env.VITE_PASSCODE || "journey"; // <--- CHANGE THIS TO YOUR SECRET PASSWORD
 const CACHE_VERSION = Date.now(); // Forces images to refresh when you reload the page
 
 /**
@@ -1379,7 +1379,7 @@ const AboutPage = memo(() => {
 const App = () => {
   console.log("App mounted");
   // New Authentication State - DEFAULTED TO TRUE to pause password for now
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [view, setView] = useState<ViewState>('intro');
   const [scrolled, setScrolled] = useState(false);
   const [navVisible, setNavVisible] = useState(true);
